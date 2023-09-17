@@ -24,6 +24,13 @@ public class Base {
         System.out.println("NOME DO CARA  : " + rs.getString("name"));
         System.out.println("IDENTIFICAÇÃO : " + rs.getInt("id"));
       }
+      // Roda os comandos para o SQLite
+      statement.executeUpdate("DROP TABLE IF EXISTS user");
+      statement.executeUpdate("CREATE TABLE user (id INTEGER, name STRING, passworld STRING, nome_completo STRING, email VARCHAR(100))");
+      statement.executeUpdate("INSERT INTO user VALUES(1, 'Joao', '111110', 'joao saraiva', 'saraivajandrade@gmail.com')");
+      statement.executeUpdate("INSERT INTO user VALUES(2, 'bia', '111110', 'binca andrade', 'bianca.andrade@gmail.com')");
+      statement.executeUpdate("INSERT INTO user VALUES(3, 'thiago', '111110', 'thiago saraiva', 'thpapapopi@gmail.com')");
+      ResultSet rs2 = statement.executeQuery("SELECT * FROM user");
     } catch(SQLException e) {
       // Se a mensagem de erro for: "out of memory",
       // Provavelmente erro ao criar(permissão) ou caminho do banco de dados
