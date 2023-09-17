@@ -26,10 +26,10 @@ public class Base {
       }
       // Roda os comandos para o SQLite
       statement.executeUpdate("DROP TABLE IF EXISTS user");
-      statement.executeUpdate("CREATE TABLE user (id INTEGER, name STRING, passworld STRING, nome_completo STRING, email VARCHAR(100))");
-      statement.executeUpdate("INSERT INTO user VALUES(1, 'Joao', '111110', 'joao saraiva', 'saraivajandrade@gmail.com')");
-      statement.executeUpdate("INSERT INTO user VALUES(2, 'bia', '111110', 'binca andrade', 'bianca.andrade@gmail.com')");
-      statement.executeUpdate("INSERT INTO user VALUES(3, 'thiago', '111110', 'thiago saraiva', 'thpapapopi@gmail.com')");
+      statement.executeUpdate("CREATE TABLE user (id INTEGER, name STRING, passworld STRING, nome_completo STRING, email VARCHAR(100), telefone VARCHAR)");
+      statement.executeUpdate("INSERT INTO user VALUES(1, 'Joao', '111110', 'joao saraiva', 'saraivajandrade@gmail.com', '982343820')");
+      statement.executeUpdate("INSERT INTO user VALUES(2, 'bia', '111110', 'binca andrade', 'bianca.andrade@gmail.com', '629283692')");
+      statement.executeUpdate("INSERT INTO user VALUES(3, 'thiago', '111110', 'thiago saraiva', 'thpapapopi@gmail.com', '81141529')");
       ResultSet rs2 = statement.executeQuery("SELECT * FROM user");
     } catch(SQLException e) {
       // Se a mensagem de erro for: "out of memory",
